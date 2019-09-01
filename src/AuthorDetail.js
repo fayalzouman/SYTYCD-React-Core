@@ -11,15 +11,15 @@ const instance = axios.create({
 
 class AuthorDetail extends Component {
   state = {
-    author: null,
+    author: {},
     loading: true
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.getAuthor();
   }
 
-  componentDidUpdate(prevProps) {
+  async componentDidUpdate(prevProps) {
     if (prevProps.match.params.authorID !== this.props.match.params.authorID) {
       this.getAuthor();
     }
